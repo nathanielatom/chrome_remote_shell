@@ -1,6 +1,11 @@
-import chrome_remote_shell
-import sys
-from distutils.core import setup
+from os import path
+from setuptools import setup, find_packages
+
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 requirements = []
 
@@ -8,11 +13,11 @@ setup(
     name='chrome_remote_shell',
     version='1.2',
     description='Client for talking to the Google Chrome remote shell port',
-    long_description=chrome_remote_shell.__doc__.split('\n\n', 1)[1],
+    long_description=long_description,
     author='Fred Clift and Brandon Craig Rhodes',
     author_email='fred@clift.org',
     url='https://github.com/minektur/chrome_remote_shell',
-    packages=['chrome_remote_shell'],
+    packages=find_packages(path),
     platforms='any',
     license='MIT',
     classifiers=[
