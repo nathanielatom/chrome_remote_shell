@@ -17,7 +17,7 @@ setup(
     author='Fred Clift and Brandon Craig Rhodes',
     author_email='fred@clift.org',
     url='https://github.com/minektur/chrome_remote_shell',
-    packages=find_packages(path),
+    packages=find_packages(here),
     platforms='any',
     license='MIT',
     classifiers=[
